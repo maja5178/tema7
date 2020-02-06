@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="data_container"></section>
+    <template>
+        <article class="dyre_objects">
+            <h3></h3>
+            <img src="" alt="">
+            <p class="type"></p>
+            <p class="levested"></p>
+        </article>
+    </template>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", visDyr);
+
+        const objects = [{
+                "Dyr": "frø",
+                "type": "Anfibie",
+                "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+                "levested": "Vandhullet"
+            },
+
+            {
+                "Dyr": "Gris",
+                "type": "Pattegris",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarm"
+            },
+            {
+                "Dyr": "Ræv",
+                "type": "Pattegris",
+                "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+                "levested": "skoven"
+            },
+            {
+                "Dyr": "Sild",
+                "type": "fisk",
+                "billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
+                "levested": "havet"
+            },
+            {
+                "Dyr": "krokodille",
+                "type": "krypdyr",
+                "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+                "levested": "floden"
+            },
+        ]
+
+        //console.log(visDyr)
+
+        function start() {
+            const container = document.querySelector(".data_container");
+            const dyre_objectsTemplate = document.querySelector("Template");
+
+
+            objects.forEach(dyr => {
+                let klon = dyre_objectsTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = objects.Dyr;
+                klon.querySelector(".type").textContent = objects.type;
+                klon.querySelector(".levested").textContent = objects.levested;
+
+
+
+                listevisning.innerHTML += `<p>${dyr.Dyr} ${dyr.type}</p>`
+            })
+        }
+    </script>
+</body></html>

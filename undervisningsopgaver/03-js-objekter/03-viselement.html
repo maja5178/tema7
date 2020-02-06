@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <article id="objects">
+        <h3></h3>
+        <img src="" alt="">
+        <p></p>
+        <p></p>
+    </article>
+
+    <script>
+        const objects = {
+            "Navn": "Gris",
+
+            "type": "Pattegris",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+            "levested": "svinefarm"
+        }
+
+        console.log(objects)
+
+        const destination = document.querySelector("#objects");
+        const fuldeNavn = `${objects.Navn}`;
+        //const information = ``
+
+        //const fuldeNavn = `Dyr:${objects.Dyr} Type:${objects.type} Levested:${objects.levested}`;
+
+        destination.querySelector("h3").textContent = fuldeNavn;
+        destination.querySelector("img").src = objects.billede;
+        destination.querySelector("p").textContent = `Type: ${objects.type}`
+        destination.querySelector("p+p").textContent = `levested:${objects.levested}`
+    </script>
+</body></html>
